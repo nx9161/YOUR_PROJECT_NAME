@@ -1,0 +1,14 @@
+[
+  {"sku": "WID-001", "title": "Wireless Earbuds Bluetooth 5.3 Noise Cancelling", "price": 12.50, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://supplier.example/WID-001"},
+  {"sku": "WID-002", "title": "Stainless Steel Insulated Water Bottle 32oz", "price": 6.20, "shipping": 0.0, "category": "kitchen", "condition": "new", "url": "https://supplier.example/WID-002"},
+  {"sku": "WID-003", "title": "LED Strip Lights 50ft RGB App Control", "price": 8.90, "shipping": 0.0, "category": "home", "condition": "new", "url": "https://supplier.example/WID-003"},
+  {"sku": "WID-004", "title": "Phone Tripod Stand with Remote 60 inch", "price": 9.75, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://supplier.example/WID-004"},
+  {"sku": "WID-005", "title": "Resistance Bands Set 5 Levels Workout", "price": 4.10, "shipping": 0.0, "category": "fitness", "condition": "new", "url": "https://supplier.example/WID-005"},
+  {"sku": "WID-006", "title": "Mechanical Keyboard 60% RGB Hot Swappable", "price": 28.00, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://supplier.example/WID-006"},
+  {"sku": "WID-007", "title": "Ceramic Plant Pots Set of 3 with Drainage", "price": 7.30, "shipping": 0.0, "category": "home", "condition": "new", "url": "https://supplier.example/WID-007"},
+  {"sku": "WID-008", "title": "Car Phone Mount Magnetic Dashboard", "price": 3.50, "shipping": 0.0, "category": "automotive", "condition": "new", "url": "https://supplier.example/WID-008"},
+  {"sku": "WID-009", "title": "Memory Foam Pillow Cervical Contour", "price": 11.40, "shipping": 0.0, "category": "home", "condition": "new", "url": "https://supplier.example/WID-009"},
+  {"sku": "WID-010", "title": "USB C Hub 7 in 1 4K HDMI Adapter", "price": 14.20, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://supplier.example/WID-010"},
+  {"sku": "WID-011", "title": "Yoga Mat Non Slip 6mm Thick Eco Friendly", "price": 10.80, "shipping": 0.0, "category": "fitness", "condition": "new", "url": "https://supplier.example/WID-011"},
+  {"sku": "WID-012", "title": "Smart Watch Fitness Tracker Heart Rate", "price": 19.00, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://supplier.example/WID-012"}
+]
