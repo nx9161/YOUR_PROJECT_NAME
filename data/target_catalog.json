@@ -1,0 +1,14 @@
+[
+  {"sku": "WID-001", "title": "Wireless Earbuds Bluetooth 5.3 Active Noise Cancelling In-Ear", "price": 34.99, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://marketplace.example/WID-001", "image": "https://img.example/earbuds.jpg"},
+  {"sku": "WID-002", "title": "Stainless Steel Insulated Water Bottle 32 oz Vacuum", "price": 21.95, "shipping": 0.0, "category": "kitchen", "condition": "new", "url": "https://marketplace.example/WID-002"},
+  {"sku": "WID-003", "title": "LED Strip Lights 50 ft RGB App Controlled Music Sync", "price": 24.99, "shipping": 0.0, "category": "home", "condition": "new", "url": "https://marketplace.example/WID-003"},
+  {"sku": "WID-004", "title": "Phone Tripod Stand 60 Inch with Bluetooth Remote", "price": 26.99, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://marketplace.example/WID-004"},
+  {"sku": "WID-005", "title": "Resistance Bands Set 5 Levels Home Workout Exercise", "price": 15.99, "shipping": 0.0, "category": "fitness", "condition": "new", "url": "https://marketplace.example/WID-005"},
+  {"sku": "WID-006", "title": "Mechanical Keyboard 60 Percent RGB Hot Swappable Gaming", "price": 39.99, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://marketplace.example/WID-006"},
+  {"sku": "WID-007", "title": "Ceramic Plant Pots Set of 3 with Drainage Holes Modern", "price": 22.50, "shipping": 0.0, "category": "home", "condition": "new", "url": "https://marketplace.example/WID-007"},
+  {"sku": "WID-008", "title": "Car Phone Mount Magnetic Dashboard Holder Universal", "price": 9.99, "shipping": 0.0, "category": "automotive", "condition": "new", "url": "https://marketplace.example/WID-008"},
+  {"sku": "WID-009", "title": "Memory Foam Pillow Cervical Contour Neck Support", "price": 29.95, "shipping": 0.0, "category": "home", "condition": "new", "url": "https://marketplace.example/WID-009"},
+  {"sku": "WID-010", "title": "USB C Hub 7 in 1 with 4K HDMI Multiport Adapter", "price": 32.99, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://marketplace.example/WID-010"},
+  {"sku": "WID-011", "title": "Yoga Mat Non Slip 6 mm Thick Eco Friendly with Strap", "price": 27.99, "shipping": 0.0, "category": "fitness", "condition": "new", "url": "https://marketplace.example/WID-011"},
+  {"sku": "WID-012", "title": "Smart Watch Fitness Tracker Heart Rate Sleep Monitor", "price": 44.99, "shipping": 0.0, "category": "electronics", "condition": "new", "url": "https://marketplace.example/WID-012"}
+]

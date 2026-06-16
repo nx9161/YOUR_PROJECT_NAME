@@ -1,0 +1,14 @@
+{
+  "source": "demo",
+  "target": "demo",
+  "query": "",
+  "fee_schedule": "ebay",
+  "min_profit": 1.0,
+  "min_roi": 0.15,
+  "ship_to_customer": 5.0,
+  "units": 1,
+  "limit": 200,
+  "interval_seconds": 3600,
+  "alert_webhook_url": "",
+  "notes": "Copy to config/config.json and set your own values. For live eBay, set EBAY_OAUTH_TOKEN env var and use source/target = ebay."
+}
