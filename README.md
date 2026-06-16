@@ -49,17 +49,46 @@ WID-005 Resistance Bands Set 5 Levels Workout  4.1    15.99  2.42  5.0   4.47   
 ...
 ```
 
-## Going live on a real marketplace
+## Real data sources
 
 The engine is marketplace-agnostic via adapters in `arbitrage/adapters/`.
+Three are built in: `demo`, `supplier` (your buy side), and `ebay` (your sell side).
 
-- **eBay** (recommended first; official API + free sandbox):
-  1. Create a free app at https://developer.ebay.com and get an OAuth token.
-  2. `export EBAY_OAUTH_TOKEN=...` (or `$env:EBAY_OAUTH_TOKEN="..."` on Windows).
-  3. `python -m arbitrage scan --source ebay --target ebay --query "wireless earbuds" --fees ebay`
-- **Amazon / Mercari / Facebook / etc.**: add an adapter implementing the
-  `Marketplace` interface in `arbitrage/adapters/base.py` and register it in
-  `arbitrage/adapters/__init__.py`. Fee schedules live in `arbitrage/fees.py`.
+### Supplier feed (your source / buy side) — no credentials
+
+Point the `supplier` adapter at a real dropship/wholesale **CSV or JSON** feed
+(local file or http(s) URL). Columns are matched case-insensitively with common
+aliases (`sku|id`, `title|name`, `price|cost|wholesale_price`, `shipping`, etc.):
+
+```bash
+python -m arbitrage scan --source supplier --source-feed data/sample_supplier_feed.csv --target demo
+# or a hosted feed:
+python -m arbitrage scan --source supplier --source-feed https://my-supplier.com/feed.csv --target ebay
+```
+
+### eBay (your target / sell side) — official Browse API
+
+1. Create a free app at https://developer.ebay.com → copy your **App ID**
+   (client id) and **Cert ID** (client secret).
+2. Set credentials (the adapter mints + caches the OAuth token for you):
+   ```bash
+   # macOS/Linux
+   export EBAY_CLIENT_ID=...; export EBAY_CLIENT_SECRET=...
+   # Windows PowerShell
+   $env:EBAY_CLIENT_ID="..."; $env:EBAY_CLIENT_SECRET="..."
+   ```
+   (Or set `EBAY_OAUTH_TOKEN` directly if you already have a token.)
+3. Scan a real supplier feed against live eBay sell prices:
+   ```bash
+   python -m arbitrage scan --source supplier --source-feed data/sample_supplier_feed.csv \
+       --target ebay --query "wireless earbuds" --fees ebay
+   ```
+
+### Other marketplaces
+
+Add an adapter implementing the `Marketplace` interface in
+`arbitrage/adapters/base.py` and register it in `arbitrage/adapters/__init__.py`.
+Fee schedules live in `arbitrage/fees.py`.
 
 > Posting/transacting is intentionally **not** auto-executed — listing creation
 > is an explicit, reviewable step. Only official, ToS-compliant APIs are used.

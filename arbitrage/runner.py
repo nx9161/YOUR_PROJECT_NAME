@@ -51,8 +51,8 @@ def run_forever(
     out.mkdir(parents=True, exist_ok=True)
     logfile = out / "opportunities.jsonl"
 
-    source = get_marketplace(source_name, dataset="source", **(source_kwargs or {}))
-    target = get_marketplace(target_name, dataset="target", **(target_kwargs or {}))
+    source = get_marketplace(source_name, **(source_kwargs or {"dataset": "source"}))
+    target = get_marketplace(target_name, **(target_kwargs or {"dataset": "target"}))
 
     stop = {"flag": False}
 

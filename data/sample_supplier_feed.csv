@@ -1,0 +1,7 @@
+sku,name,wholesale_price,shipping,category,link
+WID-001,Wireless Earbuds Bluetooth 5.3 Noise Cancelling,12.50,0,electronics,https://supplier.example/WID-001
+WID-002,Stainless Steel Insulated Water Bottle 32oz,6.20,0,kitchen,https://supplier.example/WID-002
+WID-003,LED Strip Lights 50ft RGB App Control,8.90,0,home,https://supplier.example/WID-003
+WID-005,Resistance Bands Set 5 Levels Workout,4.10,0,fitness,https://supplier.example/WID-005
+WID-008,Car Phone Mount Magnetic Dashboard,3.50,0,automotive,https://supplier.example/WID-008
+WID-012,Smart Watch Fitness Tracker Heart Rate,19.00,0,electronics,https://supplier.example/WID-012

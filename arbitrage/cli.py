@@ -38,15 +38,19 @@ def _build_config(args) -> ScanConfig:
     )
 
 
+def _market_kwargs(name: str, role: str, args) -> dict:
+    """Build constructor kwargs for a marketplace given its role (source/target)."""
+    if name == "demo":
+        return {"dataset": role, "live": args.live}
+    if name == "supplier":
+        feed = args.source_feed if role == "source" else args.target_feed
+        return {"feed": feed}
+    return {}  # ebay reads credentials from the environment
+
+
 def _make_markets(args):
-    src_kwargs = {"dataset": "source"}
-    tgt_kwargs = {"dataset": "target"}
-    if args.source == "demo":
-        src_kwargs["live"] = args.live
-    if args.target == "demo":
-        tgt_kwargs["live"] = args.live
-    source = get_marketplace(args.source, **src_kwargs)
-    target = get_marketplace(args.target, **tgt_kwargs)
+    source = get_marketplace(args.source, **_market_kwargs(args.source, "source", args))
+    target = get_marketplace(args.target, **_market_kwargs(args.target, "target", args))
     return source, target
 
 
@@ -91,8 +95,6 @@ def cmd_run(args) -> int:
     from .runner import run_forever
 
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
-    src_kwargs = {"live": args.live} if args.source == "demo" else {}
-    tgt_kwargs = {"live": args.live} if args.target == "demo" else {}
     run_forever(
         source_name=args.source,
         target_name=args.target,
@@ -101,8 +103,8 @@ def cmd_run(args) -> int:
         query=args.query,
         webhook=args.webhook,
         max_iterations=args.max_iterations,
-        source_kwargs=src_kwargs,
-        target_kwargs=tgt_kwargs,
+        source_kwargs=_market_kwargs(args.source, "source", args),
+        target_kwargs=_market_kwargs(args.target, "target", args),
     )
     return 0
 
@@ -112,8 +114,10 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="command", required=True)
 
     def common(sp):
-        sp.add_argument("--source", default="demo", help="source marketplace (buy)")
-        sp.add_argument("--target", default="demo", help="target marketplace (sell)")
+        sp.add_argument("--source", default="demo", help="source marketplace (buy): demo/supplier/ebay")
+        sp.add_argument("--target", default="demo", help="target marketplace (sell): demo/supplier/ebay")
+        sp.add_argument("--source-feed", default=None, dest="source_feed", help="CSV/JSON feed path or URL (when --source supplier)")
+        sp.add_argument("--target-feed", default=None, dest="target_feed", help="CSV/JSON feed path or URL (when --target supplier)")
         sp.add_argument("--query", default="", help="search query (blank = browse catalog)")
         sp.add_argument("--fees", default="ebay", help="fee schedule: ebay/amazon/mercari/facebook/generic")
         sp.add_argument("--min-profit", type=float, default=1.0, dest="min_profit")
